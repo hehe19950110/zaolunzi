@@ -1,9 +1,8 @@
 import React from 'react';
 function Button () {
   return (
-    <div>
-      按钮
-    </div>
+    <div>button2</div>
+    //React.createElement('div',null,'button')
   )
 }
 export default Button;
