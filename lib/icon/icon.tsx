@@ -4,11 +4,12 @@ import './icon.scss'
 
 interface IconProps {
   name: string;
+  //onClick :React.MouseEventHandler<SVGAElement>
+  onClick: () => void; 
 }
 
 const Icon: React.FunctionComponent<IconProps> = (props) => {
   //Icon 是一个react的函数组件，他的属性类型是IconProps（里面有name:string）
-  console.log(props)
   return (
     <span>
       {/* <svg>
@@ -20,7 +21,7 @@ const Icon: React.FunctionComponent<IconProps> = (props) => {
       <svg>
         <use xlinkHref="#qq"></use>
       </svg> */}
-      <svg className='fui-icon'>
+      <svg className='fui-icon' onClick={props.onClick}>
         <use xlinkHref={`#${props.name}`} />
       </svg>
     </span>
