@@ -1,31 +1,24 @@
 import React from 'react';
 import '../importIcons'
 import './icon.scss'
+import classes  from '../helper/classnames'
 
-interface IconProps {
+interface IconProps extends React.SVGProps<SVGSVGElement> {
   name: string;
-  //onClick :React.MouseEventHandler<SVGAElement>
-  onClick: () => void; 
+
 }
 
-const Icon: React.FunctionComponent<IconProps> = (props) => {
+const Icon:React.FC<IconProps> = (props) => {
   //Icon 是一个react的函数组件，他的属性类型是IconProps（里面有name:string）
+  const {className,name,...restProps} = props;
   return (
-    <span>
-      {/* <svg>
-        <use xlinkHref="#wechat"></use>
+      <svg className={classes('fui-icon', className) }
+           {...restProps}
+      >
+        <use xlinkHref={`#${name}`} />
       </svg>
-      <svg>
-        <use xlinkHref="#alipay"></use>
-      </svg>
-      <svg>
-        <use xlinkHref="#qq"></use>
-      </svg> */}
-      <svg className='fui-icon' onClick={props.onClick}>
-        <use xlinkHref={`#${props.name}`} />
-      </svg>
-    </span>
   );
 };
 
 export default Icon;
+// <className={`fui-icon ${className ? className : ''}`}
