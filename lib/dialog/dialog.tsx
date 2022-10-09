@@ -1,5 +1,5 @@
 import {Icon} from '../index';
-import React, { Fragment, ReactElement, ReactNode } from "react";
+import React, { Fragment, ReactElement, ReactNode,} from "react";
 import './dialog.scss'
 import { scopedClassMaker } from '../helper/classnames';
 import ReactDOM from 'react-dom';
@@ -10,6 +10,7 @@ interface Props {
   visible: boolean;
   onClose: React.MouseEventHandler;
   closeOnClickMask?: boolean;
+
 
 }
 
@@ -59,11 +60,6 @@ Dialog.defaultProps = {
   closeOnClickMask: false
 };
 
-const alert = (content: string) => {
-  const button = <button onClick={() => close()}>OK</button>;
-  const close = modal(content, [button]);
-};
-
 const modal = (content: ReactNode, buttons?: Array<ReactElement>, afterClose?: () => void) => {
   const close = () => {
     ReactDOM.render(React.cloneElement(component, {visible: false}), div);
@@ -85,7 +81,10 @@ const modal = (content: ReactNode, buttons?: Array<ReactElement>, afterClose?: (
   ReactDOM.render(component, div);
   return close;
 };
-
+const alert = (content: string) => {
+  const button = <button onClick={() => close()}>OK</button>;
+  const close = modal(content, [button]);
+};
 const confirm = (content: string, yes?: () => void, no?: () => void) => {
   const onYes = () => {
     close();
@@ -104,3 +103,4 @@ const confirm = (content: string, yes?: () => void, no?: () => void) => {
 
 export default Dialog;
 export {alert, confirm, modal};
+
