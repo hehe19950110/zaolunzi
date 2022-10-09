@@ -29,5 +29,4 @@
 
 
 export {default as Icon} from './icon/icon';
-
-//import './index.scss';
+import './index.scss';

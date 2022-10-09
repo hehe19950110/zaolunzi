@@ -1,7 +1,7 @@
 import {Icon} from '../index';
 import React, { Fragment } from "react";
 import './dialog.scss'
-import { scopedClassMaker } from 'lib/helper/classnames';
+import { scopedClassMaker } from '../helper/classnames';
 
 interface Props {
   children: JSX.Element;
