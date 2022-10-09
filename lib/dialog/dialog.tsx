@@ -2,6 +2,7 @@ import {Icon} from '../index';
 import React, { Fragment, ReactElement } from "react";
 import './dialog.scss'
 import { scopedClassMaker } from '../helper/classnames';
+import ReactDOM from 'react-dom';
 
 interface Props {
   buttons: Array<ReactElement>;
@@ -26,8 +27,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
     }
   };
 
-  return (
-    props.visible ?
+  const result = props.visible &&
     <Fragment>
       <div className={sc('mask')} onClick={onClickMask}>
       </div>
@@ -35,27 +35,24 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
         <div className={sc('close')} onClick={onClickClose}>
           <Icon name="close"/>
         </div>
-
         <header className={sc('header')}>
           提示
         </header>
-
         <main className={sc('main')}>
           {props.children}
         </main>
-
+        {props.buttons && props.buttons.length > 0 &&
         <footer className={sc('footer')}>
           {props.buttons && props.buttons.map((button, index) =>
             React.cloneElement(button, {key: index})
           )}
         </footer>
-        
-       
+        }
       </div>
-    </Fragment>
-    : null
+    </Fragment>;
+  return (
+    ReactDOM.createPortal(result, document.body)
   );
-
 };
 
 Dialog.defaultProps = {

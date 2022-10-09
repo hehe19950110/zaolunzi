@@ -8,7 +8,7 @@ export default function () {
 
   return (
     <div>
-        <div>
+        <div style={{position: 'relative', zIndex: 10, border: '1px solid red', color: 'red'}}>
         <h1>example 1</h1>
         <button onClick={() => setX(!x)}>click</button>
         <Dialog visible={x} buttons={
@@ -21,7 +21,7 @@ export default function () {
         </Dialog>
       </div>
 
-      <div>
+      <div style={{position: 'relative', zIndex: 9}}>
         <h1>example 2</h1>
         <button onClick={() => setY(!y)}>click</button>
         <Dialog visible={y} closeOnClickMask={true} buttons={
@@ -33,6 +33,22 @@ export default function () {
           <strong>hi,example 2</strong>
         </Dialog>
       </div>
+
+      <div>
+        <h1>example 3</h1>
+        <button onClick={() => alert('1')}>alert</button>
+        {/* <button onClick={() => confirm('1', () => {
+          console.log('你点击了yes');
+        }, () => {
+          console.log('你点击了no');
+        })}>confirm
+        </button> */}
+      </div>
+
+      {/* <div>
+        <h1>example 4</h1>
+        <button onClick={openModal}>modal</button>
+      </div> */}
 
     </div>
 
