@@ -1,5 +1,5 @@
 import {Icon} from '../index';
-import React, { Fragment, ReactElement } from "react";
+import React, { Fragment, ReactElement, ReactNode } from "react";
 import './dialog.scss'
 import { scopedClassMaker } from '../helper/classnames';
 import ReactDOM from 'react-dom';
@@ -59,4 +59,48 @@ Dialog.defaultProps = {
   closeOnClickMask: false
 };
 
+const alert = (content: string) => {
+  const button = <button onClick={() => close()}>OK</button>;
+  const close = modal(content, [button]);
+};
+
+const modal = (content: ReactNode, buttons?: Array<ReactElement>, afterClose?: () => void) => {
+  const close = () => {
+    ReactDOM.render(React.cloneElement(component, {visible: false}), div);
+    ReactDOM.unmountComponentAtNode(div);
+    div.remove();
+  };
+  const component =
+    <Dialog
+      visible={true}
+      buttons={buttons}
+      onClose={() => {
+        close();
+        afterClose && afterClose();
+      }}>
+      {content}
+    </Dialog>;
+  const div = document.createElement('div');
+  document.body.append(div);
+  ReactDOM.render(component, div);
+  return close;
+};
+
+const confirm = (content: string, yes?: () => void, no?: () => void) => {
+  const onYes = () => {
+    close();
+    yes && yes();
+  };
+  const onNo = () => {
+    close();
+    no && no();
+  };
+  const buttons = [
+    <button onClick={onYes}>yes</button>,
+    <button onClick={onNo}>no</button>
+  ];
+  const close = modal(content, buttons, no);
+};
+
 export default Dialog;
+export {alert, confirm, modal};
