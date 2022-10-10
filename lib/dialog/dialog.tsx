@@ -30,16 +30,20 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
     <Fragment>
       <div className={sc('mask')} onClick={onClickMask}>
       </div>
+
       <div className={sc('')}>
         <div className={sc('close')} onClick={onClickClose}>
           <Icon name="close"/>
         </div>
+
         <header className={sc('header')}>
           提示
         </header>
+
         <main className={sc('main')}>
           {props.children}
         </main>
+
         {props.buttons && props.buttons.length > 0 &&
         <footer className={sc('footer')}>
           {props.buttons && props.buttons.map((button, index) =>
@@ -47,6 +51,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
           )}
         </footer>
         }
+        
       </div>
     </Fragment>;
   return (
