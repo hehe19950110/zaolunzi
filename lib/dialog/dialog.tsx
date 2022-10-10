@@ -1,17 +1,15 @@
 import {Icon} from '../index';
-import React, { Fragment, ReactElement, ReactNode,} from "react";
+import React, { Fragment, ReactElement, ReactNode, } from "react";
 import './dialog.scss'
 import { scopedClassMaker } from '../helper/classnames';
 import ReactDOM from 'react-dom';
 
 interface Props {
   buttons: Array<ReactElement>;
-  children: JSX.Element;
+  children: ReactNode;
   visible: boolean;
   onClose: React.MouseEventHandler;
   closeOnClickMask?: boolean;
-
-
 }
 
 const scopedClass = scopedClassMaker('fui-dialog');
@@ -60,7 +58,7 @@ Dialog.defaultProps = {
   closeOnClickMask: false
 };
 
-const modal = (content: ReactNode, buttons?: Array<ReactElement>, afterClose?: () => void) => {
+const modal = (content:ReactNode, buttons?: Array<ReactElement>, afterClose?: () => void) => {
   const close = () => {
     ReactDOM.render(React.cloneElement(component, {visible: false}), div);
     ReactDOM.unmountComponentAtNode(div);
@@ -76,6 +74,7 @@ const modal = (content: ReactNode, buttons?: Array<ReactElement>, afterClose?: (
       }}>
       {content}
     </Dialog>;
+    
   const div = document.createElement('div');
   document.body.append(div);
   ReactDOM.render(component, div);

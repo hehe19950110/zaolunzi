@@ -7,14 +7,14 @@ export default function () {
   const [y, setY] = useState(false);
 
   const openModal = () => {
-    const close = modal(<h1>你好
+    const close = modal(<h1>你好, example 4
       <button onClick={() => close()}>close</button>
     </h1>);
   };
 
   return (
     <div>
-        <div style={{position: 'relative', zIndex: 10, border: '1px solid red', color: 'red'}}>
+        <div style={{position: 'relative', zIndex: 10, border: '2px solid red'}}>
         <h1>example 1</h1>
         <button onClick={() => setX(!x)}>click</button>
         <Dialog visible={x} buttons={
@@ -27,7 +27,7 @@ export default function () {
         </Dialog>
       </div>
 
-      <div style={{position: 'relative', zIndex: 9}}>
+      <div style={{position: 'relative', zIndex: 9, border: '2px solid yellow'}}>
         <h1>example 2</h1>
         <button onClick={() => setY(!y)}>click</button>
         <Dialog visible={y} closeOnClickMask={true} buttons={
@@ -40,18 +40,16 @@ export default function () {
         </Dialog>
       </div>
 
-      <div>
+      <div style={{position: 'relative', zIndex: 8, border: '2px solid grey'}}>
         <h1>example 3</h1>
-        <button onClick={() => alert('1')}>alert</button>
-        <button onClick={() => confirm('1', () => {
-          console.log('你点击了yes');
+        <button onClick={() => alert('hi, example 3, alert')}>alert</button>
+        <button onClick={() => confirm('hi, example 3, confirm', () => {
         }, () => {
-          console.log('你点击了no');
         })}>confirm
         </button> 
       </div>
 
-      <div>
+      <div style={{position: 'relative', zIndex: 7, border: '2px solid green'}}>
         <h1>example 4</h1>
         <button onClick={openModal}>modal</button>
       </div>
