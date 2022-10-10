@@ -1,10 +1,13 @@
 import React from "react";
-
-
-const Aside: React.FunctionComponent = (props) => {
+import { scopedClassMaker } from "../helper/classnames";
+interface Props extends React.HTMLAttributes<HTMLElement> {
+}
+const sc = scopedClassMaker('zhu-layout');
+const Aside: React.FunctionComponent<Props> = (props) => {
+  const {className, ...rest} = props;
   return (
-    <div>
-      aside
+    <div className={sc('aside', {extra: className})} {...rest}>
+      {props.children}
     </div>
   );
 };
