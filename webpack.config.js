@@ -6,7 +6,7 @@ module.exports = {
     index: "./lib/index.tsx",
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx", "..."],
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
   },
   output: {
     path: path.resolve(__dirname, "dist/lib"),
@@ -36,6 +36,10 @@ module.exports = {
             loader: "sass-loader", // 将 Sass 编译成 CSS
           },
         ],
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/,
+        use: "file-loader",
       },
     ],
   },

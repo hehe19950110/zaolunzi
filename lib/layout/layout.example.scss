@@ -1,3 +1,7 @@
+.e {
+  margin: 20px 10px;
+  padding: 10px;
+}
 .x {
   height: 40px;
   background: #144ca7;
@@ -8,19 +12,15 @@
 }
 .y {
   background: lighten(#87a9df, 5%);
-  margin: 4px 0;
+  margin: 4px 0px;
   color: white;
   display: flex;
   justify-content: center;
 }
 .z {
   background: #8cba98;
-  width: 100px;
   margin: 4px 0;
   color: white;
   display: flex;
   justify-content: center;
-}
-.z + .y, .y + .z, .z + .zhu-layout {
-  margin-left: 8px;
 }

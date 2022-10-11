@@ -9,7 +9,7 @@ import './layout.example.scss';
 export default function () {
   return (
     <div>
-      <div>
+      <div className="e" >
         <h1>layout:第一个例子</h1>
         <Layout style={{height: 300, width: 500}} className="hi">
           <Header className="x">header</Header>
@@ -18,11 +18,11 @@ export default function () {
         </Layout>
       </div>
 
-      <div>
+      <div className="e" >
         <h1>layout:第二个例子</h1>
         <Layout style={{height: 300, width: 500}} className="hi">
           <Header className="x">header</Header>
-          <Layout>
+          <Layout >
             <Aside className="z">aside</Aside>
             <Content className="y">content</Content>
           </Layout>
@@ -30,7 +30,7 @@ export default function () {
         </Layout>
       </div>
 
-      <div>
+      <div className="e" >
         <h1>layout:第三个例子</h1>
         <Layout style={{height: 300, width: 500}} className="hi">
           <Header className="x">header</Header>
@@ -42,7 +42,7 @@ export default function () {
         </Layout>
       </div>
 
-      <div>
+      <div className="e" >
         <h1>layout:第四个例子</h1>
         <Layout style={{height: 300, width: 500}} className="hi">
           <Aside className="z">aside</Aside>

@@ -14,7 +14,7 @@ export default function () {
 
   return (
     <div>
-        <div style={{position: 'relative', zIndex: 10, border: '2px solid red'}}>
+        <div className="a1" style={{position: 'relative', zIndex: 10, width:"500px", background: "#5ea2b633"}}>
         <h1>example 1</h1>
         <button onClick={() => setX(!x)}>click</button>
         <Dialog visible={x} buttons={
@@ -27,7 +27,7 @@ export default function () {
         </Dialog>
       </div>
 
-      <div style={{position: 'relative', zIndex: 9, border: '2px solid yellow'}}>
+      <div className="a1" style={{position: 'relative', zIndex: 9, width:"500px", background: "#d7dfa933"}}>
         <h1>example 2</h1>
         <button onClick={() => setY(!y)}>click</button>
         <Dialog visible={y} closeOnClickMask={true} buttons={
@@ -40,7 +40,7 @@ export default function () {
         </Dialog>
       </div>
 
-      <div style={{position: 'relative', zIndex: 8, border: '2px solid grey'}}>
+      <div className="a1" style={{position: 'relative', zIndex: 8, width:"500px", background: "#f2b80933"}}>
         <h1>example 3</h1>
         <button onClick={() => alert('hi, example 3, alert')}>alert</button>
         <button onClick={() => confirm('hi, example 3, confirm', () => {
@@ -49,7 +49,7 @@ export default function () {
         </button> 
       </div>
 
-      <div style={{position: 'relative', zIndex: 7, border: '2px solid green'}}>
+      <div className="a1" style={{position: 'relative', zIndex: 7, width:"500px", background: "#f3523233"}}>
         <h1>example 4</h1>
         <button onClick={openModal}>modal</button>
       </div>

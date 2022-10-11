@@ -33,7 +33,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
 
       <div className={sc('')}>
         <div className={sc('close')} onClick={onClickClose}>
-          <Icon name="close"/>
+          <Icon name="close" children={undefined}/>
         </div>
 
         <header className={sc('header')}>

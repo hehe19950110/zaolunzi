@@ -24,7 +24,7 @@
   },
   "include": [
     "lib/**/*"
-  ],
+, "lib/icon/importIcons.jstIcons.js"  ],
   "exclude": [
     "node_modules",
     "build",
