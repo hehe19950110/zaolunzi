@@ -17,7 +17,7 @@ ReactDOM.render(
     <Layout className="site-page">
       <Header className="site-header">
         <div className="logo">
-          <img src={logo} width="108" height="108" alt=""/>
+          <img src={logo} width="128" height="128" alt=""/>
           <span> 组件库 </span>
         </div>
       </Header>

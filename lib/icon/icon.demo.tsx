@@ -9,6 +9,7 @@ const IconDemo = () => {
       <Demo code={require('!!raw-loader!./icon.example').default}>
         <IconExample/>
       </Demo>
+
       <Demo code={require('!!raw-loader!./icon.example2.tsx').default}>
         <IconExample2/>
       </Demo>
